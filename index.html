@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotlight Edits — Montaža fudbalskih highlight klipova</title>
+<meta name="description" content="Profesionalna montaža fudbalskih video klipova za slanje klubovima, manadžerima i skautima.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-dot"></span>
+      SPOTLIGHT<span class="logo-thin">EDITS</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#proces" data-i18n="nav_kako">Kako radi</a>
+      <a href="#stil" data-i18n="nav_stil">Stil montaže</a>
+      <a href="#paketi" data-i18n="nav_paketi">Paketi</a>
+      <a href="#forma" class="nav-cta" data-i18n="nav_posalji">Pošalji snimak</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn active" data-lang="bs" type="button">BS</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-spotlight" id="heroSpotlight"></div>
+  <div class="pitch-lines" aria-hidden="true">
+    <svg viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <rect x="40" y="40" width="1120" height="620" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="600" cy="350" r="90" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="600" y1="40" x2="600" y2="660" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="40" y="220" width="160" height="260" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="1000" y="220" width="160" height="260" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <p class="eyebrow reveal" data-i18n="hero_eyebrow">VIDEO MONTAŽA ZA FUDBALERE</p>
+    <h1 class="hero-title reveal" data-i18n-html="hero_title">
+      Neka te menadžeri<br>
+      <span class="accent">vide onako</span><br>
+      kako zaslužuješ.
+    </h1>
+    <p class="hero-sub reveal" data-i18n="hero_sub">
+      Montiram highlight klipove od sirovog snimka utakmice — spremne za slanje
+      klubovima, skautima i managerima. Brzo, čisto, efektno.
+    </p>
+    <div class="hero-actions reveal">
+      <a href="#paketi" class="btn btn-primary" data-i18n="hero_btn_primary">Pogledaj pakete</a>
+      <a href="#forma" class="btn btn-ghost" data-i18n="hero_btn_ghost">Pošalji snimak</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span></span>
+    <p data-i18n="hero_scroll">Skroluj</p>
+  </div>
+</section>
+
+<!-- KAKO RADI -->
+<section class="process" id="proces">
+  <div class="section-head reveal">
+    <p class="eyebrow" data-i18n="proces_eyebrow">Proces</p>
+    <h2 data-i18n="proces_heading">Od sirovog snimka do klipa koji se šalje dalje</h2>
+  </div>
+
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <span class="step-num">01</span>
+      <h3 data-i18n="proces1_title">Pošalji snimak</h3>
+      <p data-i18n="proces1_desc">Podijeli link ka snimku utakmice (Drive, WeTransfer ili sličn) putem forme ispod.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="step-num">02</span>
+      <h3 data-i18n="proces2_title">Odabir akcija</h3>
+      <p data-i18n="proces2_desc">Prolazim kroz cijeli meč i izdvajam tvoje najbolje trenutke — driblinzi, asistencije, golovi, odbrane.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="step-num">03</span>
+      <h3 data-i18n="proces3_title">Montaža</h3>
+      <p data-i18n="proces3_desc">Rezovi, usporeni snimci, grafika sa imenom i pozicijom, po potrebi i statistika iz utakmice.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="step-num">04</span>
+      <h3 data-i18n="proces4_title">Isporuka</h3>
+      <p data-i18n="proces4_desc">Gotov klip u roku od 48h, u formatu spremnom za slanje klubu ili manageru.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STIL MONTAZE / DEMO -->
+<section class="showcase" id="stil">
+  <div class="section-head reveal">
+    <p class="eyebrow" data-i18n="stil_eyebrow">Stil montaže</p>
+    <h2 data-i18n="stil_heading">Kako izgleda gotov klip</h2>
+    <p class="section-note" data-i18n="stil_note">Demo stilovi ispod pokazuju format i grafiku — pravi klijentski radovi stižu uskoro.</p>
+  </div>
+
+  <div class="showcase-grid">
+    <article class="reel-card reveal">
+      <div class="reel-frame">
+        <svg viewBox="0 0 400 240" class="reel-svg" aria-hidden="true">
+          <rect width="400" height="240" fill="#123B26"/>
+          <rect x="0" y="0" width="400" height="240" fill="url(#g1)"/>
+          <circle cx="200" cy="120" r="70" fill="none" stroke="#2F8F57" stroke-width="2"/>
+          <line x1="200" y1="0" x2="200" y2="240" stroke="#2F8F57" stroke-width="1.5"/>
+          <defs>
+            <radialGradient id="g1" cx="50%" cy="35%" r="75%">
+              <stop offset="0%" stop-color="#1F6F43" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0B0E0C" stop-opacity="0.95"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="reel-play"><span></span></div>
+        <span class="reel-timestamp">02:14</span>
+        <span class="reel-tag" data-i18n="reel1_tag">SPRINT / DRIBLING</span>
+      </div>
+      <h3 data-i18n="reel1_title">Napadač reel</h3>
+      <p data-i18n="reel1_desc">Fokus na driblinge, završnice i kretanje bez lopte.</p>
+    </article>
+
+    <article class="reel-card reveal">
+      <div class="reel-frame">
+        <svg viewBox="0 0 400 240" class="reel-svg" aria-hidden="true">
+          <rect width="400" height="240" fill="#123B26"/>
+          <rect x="0" y="0" width="400" height="240" fill="url(#g2)"/>
+          <rect x="150" y="20" width="100" height="200" fill="none" stroke="#2F8F57" stroke-width="1.5"/>
+          <defs>
+            <radialGradient id="g2" cx="50%" cy="65%" r="75%">
+              <stop offset="0%" stop-color="#1F6F43" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0B0E0C" stop-opacity="0.95"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="reel-play"><span></span></div>
+        <span class="reel-timestamp">04:07</span>
+        <span class="reel-tag" data-i18n="reel2_tag">ODBRANA / REFLEKS</span>
+      </div>
+      <h3 data-i18n="reel2_title">Golman reel</h3>
+      <p data-i18n="reel2_desc">Odbrane, izlasci i igra nogama, sa uglovima koji to najbolje pokazuju.</p>
+    </article>
+
+    <article class="reel-card reveal">
+      <div class="reel-frame">
+        <svg viewBox="0 0 400 240" class="reel-svg" aria-hidden="true">
+          <rect width="400" height="240" fill="#123B26"/>
+          <rect x="0" y="0" width="400" height="240" fill="url(#g3)"/>
+          <circle cx="90" cy="190" r="55" fill="none" stroke="#2F8F57" stroke-width="1.5"/>
+          <circle cx="310" cy="190" r="55" fill="none" stroke="#2F8F57" stroke-width="1.5"/>
+          <defs>
+            <radialGradient id="g3" cx="50%" cy="30%" r="80%">
+              <stop offset="0%" stop-color="#1F6F43" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#0B0E0C" stop-opacity="0.95"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="reel-play"><span></span></div>
+        <span class="reel-timestamp">01:32</span>
+        <span class="reel-tag" data-i18n="reel3_tag">TIM / MEČ</span>
+      </div>
+      <h3 data-i18n="reel3_title">Klub highlight paket</h3>
+      <p data-i18n="reel3_desc">Sažetak cijele utakmice ili sezone za klupsku arhivu i objave.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PAKETI -->
+<section class="pricing" id="paketi">
+  <div class="section-head reveal">
+    <p class="eyebrow" data-i18n="cjena_eyebrow">Paketi</p>
+    <h2 data-i18n="cjena_heading">Odaberi paket koji ti odgovara</h2>
+  </div>
+
+  <div class="pricing-grid">
+    <article class="price-card reveal">
+      <p class="price-tag" data-i18n="p1_tag">OSNOVNI</p>
+      <p class="price-amount">20€<span data-i18n="p1_unit">/klip</span></p>
+      <ul class="price-features">
+        <li data-i18n="p1_f1">Klip do 3 minute</li>
+        <li data-i18n="p1_f2">Do 10 izdvojenih akcija</li>
+        <li data-i18n="p1_f3">Osnovna grafika (ime, pozicija)</li>
+        <li data-i18n="p1_f4">Isporuka u 48h</li>
+      </ul>
+      <a href="#forma" class="btn btn-outline" data-i18n="btn_odaberi">Odaberi</a>
+    </article>
+
+    <article class="price-card price-card-featured reveal">
+      <p class="price-badge" data-i18n="p2_badge">Najtraženiji</p>
+      <p class="price-tag">PRO</p>
+      <p class="price-amount">40€<span data-i18n="p2_unit">/klip</span></p>
+      <ul class="price-features">
+        <li data-i18n="p2_f1">Highlight reel do 5 minuta</li>
+        <li data-i18n="p2_f2">Neograničen broj akcija</li>
+        <li data-i18n="p2_f3">Statistika i grafika preko snimka</li>
+        <li data-i18n="p2_f4">Muzika i tranzicije</li>
+        <li data-i18n="p2_f5">Isporuka u 24–48h</li>
+      </ul>
+      <a href="#forma" class="btn btn-primary" data-i18n="btn_odaberi">Odaberi</a>
+    </article>
+
+    <article class="price-card reveal">
+      <p class="price-tag" data-i18n="p3_tag">KLUB PAKET</p>
+      <p class="price-amount" data-i18n="p3_amount">Po dogovoru</p>
+      <ul class="price-features">
+        <li data-i18n="p3_f1">Više igrača / cijela utakmica</li>
+        <li data-i18n="p3_f2">Prilagođeno klupskim potrebama</li>
+        <li data-i18n="p3_f3">Paket za slanje više klubova</li>
+        <li data-i18n="p3_f4">Fiksna cijena po dogovoru</li>
+      </ul>
+      <a href="#forma" class="btn btn-outline" data-i18n="btn_kontaktiraj">Kontaktiraj me</a>
+    </article>
+  </div>
+  <p class="pricing-note reveal" data-i18n-html="pricing_note">* Cijene su okvirne — uredi ih u <code>index.html</code> prema svojoj ponudi.</p>
+</section>
+
+<!-- FORMA -->
+<section class="contact" id="forma">
+  <div class="contact-inner">
+    <div class="contact-text reveal">
+      <p class="eyebrow" data-i18n="kontakt_eyebrow">Rezervacija</p>
+      <h2 data-i18n="kontakt_heading">Pošalji snimak i izaberi paket</h2>
+      <p data-i18n="kontakt_desc">Popuni formu i javljam se u roku od 24h da dogovorimo detalje.</p>
+      <div class="contact-alt">
+        <p data-i18n="kontakt_ili">Ili direktno:</p>
+        <a href="mailto:info@spotlightedits.example">info@spotlightedits.example</a>
+      </div>
+    </div>
+
+    <form class="booking-form reveal" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookingForm">
+      <input type="hidden" name="form-name" value="booking">
+      <p class="hidden-field">
+        <label><span data-i18n="form_bot">Ne popunjavaj ovo polje: </span><input name="bot-field"></label>
+      </p>
+
+      <div class="form-row">
+        <label for="name" data-i18n="form_name">Ime i prezime</label>
+        <input type="text" id="name" name="name" required placeholder="Amar Amarović" data-i18n-placeholder="form_name_ph">
+      </div>
+
+      <div class="form-row form-row-split">
+        <div>
+          <label for="email" data-i18n="form_email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="ime@email.com" data-i18n-placeholder="form_email_ph">
+        </div>
+        <div>
+          <label for="phone" data-i18n="form_phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" placeholder="+387 6x xxx xxx">
+        </div>
+      </div>
+
+      <div class="form-row form-row-split">
+        <div>
+          <label for="position" data-i18n="form_position">Pozicija</label>
+          <select id="position" name="position">
+            <option data-i18n="pos_1">Napadač</option>
+            <option data-i18n="pos_2">Vezni</option>
+            <option data-i18n="pos_3">Odbrambeni</option>
+            <option data-i18n="pos_4">Golman</option>
+          </select>
+        </div>
+        <div>
+          <label for="package" data-i18n="form_package">Paket</label>
+          <select id="package" name="package">
+            <option data-i18n="pkg_1">Osnovni</option>
+            <option data-i18n="pkg_2">Pro</option>
+            <option data-i18n="pkg_3">Klub paket</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="link" data-i18n="form_link">Link ka snimku utakmice</label>
+        <input type="url" id="link" name="link" placeholder="Google Drive / WeTransfer link">
+      </div>
+
+      <div class="form-row">
+        <label for="message" data-i18n="form_message">Poruka (opciono)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Minutaža najboljih akcija, dres broj, boja tima..." data-i18n-placeholder="form_message_ph"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit" data-i18n="form_submit">Pošalji zahtjev</button>
+      <p class="form-success" id="formSuccess" data-i18n="form_success">Hvala! Javljam se uskoro na tvoj email.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="logo footer-logo">
+      <span class="logo-dot"></span>
+      SPOTLIGHT<span class="logo-thin">EDITS</span>
+    </div>
+    <div class="footer-links">
+      <a href="#proces" data-i18n="nav_kako">Kako radi</a>
+      <a href="#paketi" data-i18n="nav_paketi">Paketi</a>
+      <a href="#forma" data-i18n="footer_kontakt">Kontakt</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="TikTok">TikTok</a>
+    </div>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Spotlight Edits. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
