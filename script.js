@@ -309,24 +309,27 @@ function odaberiPaket(imePaketa) {
     const forma = document.getElementById('bookingForm');
     if (!forma) return;
 
+    // Obrati pažnju na 'true' na samom kraju - to znači da naša skripta presreće formu PRVA
     forma.addEventListener('submit', function(event) {
         const linkPolje = document.getElementById('link');
         if (!linkPolje) return;
 
         const uneseniLink = linkPolje.value.trim().toLowerCase();
 
-       
+       s
         if (!uneseniLink.includes('wetransfer.com') && !uneseniLink.includes('we.tl')) {
-            event.preventDefault(); // Zaustavlja slanje samo ako je greška
+            event.preventDefault(); 
+            event.stopImmediatePropagation(); // Ubija Netlifyjevu skriptu da ne šalje mail
             alert('Molimo vas da unesete validan WeTransfer link.');
             return;
         }
 
-       
+        
         let poslaniLinkovi = JSON.parse(localStorage.getItem('iskoristeniLinkovi')) || [];
         
         if (poslaniLinkovi.includes(uneseniLink)) {
-            event.preventDefault(); // Zaustavlja slanje
+            event.preventDefault(); 
+            event.stopImmediatePropagation(); // Ubija Netlifyjevu skriptu da ne šalje mail
             alert('Ovaj WeTransfer link je već poslan! Ako prijavljujete novu utakmicu, molimo zalijepite novi link.');
             return;
         }
@@ -334,5 +337,6 @@ function odaberiPaket(imePaketa) {
         
         poslaniLinkovi.push(uneseniLink);
         localStorage.setItem('iskoristeniLinkovi', JSON.stringify(poslaniLinkovi));
-    });
+        
+    }, true); 
 })();
