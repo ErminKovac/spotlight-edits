@@ -297,10 +297,43 @@ if (bookingForm) {
   });
 }
 
-// Funkcija za automatsko selektovanje paketa u formi
+
 function odaberiPaket(imePaketa) {
     const paketSelect = document.getElementById('package');
     if (paketSelect) {
         paketSelect.value = imePaketa;
     }
+}
+
+const bookingForm = document.getElementById('bookingForm');
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', function(event) {
+    
+    event.preventDefault(); 
+
+    const linkInput = document.getElementById('link');
+    const uneseniLink = linkInput.value.trim().toLowerCase();
+
+  
+    if (!uneseniLink.includes('wetransfer.com') && !uneseniLink.includes('we.tl')) {
+      alert('Molimo vas da unesete validan WeTransfer link.');
+      return; // Prekida dalje izvršavanje
+    }
+
+    
+    let poslaniLinkovi = JSON.parse(localStorage.getItem('iskoristeniLinkovi')) || [];
+
+    if (poslaniLinkovi.includes(uneseniLink)) {
+      alert('Ovaj WeTransfer link je već poslan! Ako prijavljujete novu utakmicu, molimo zalijepite novi link.');
+      return; // Prekida slanje forme
+    }
+
+    
+    poslaniLinkovi.push(uneseniLink);
+    localStorage.setItem('iskoristeniLinkovi', JSON.stringify(poslaniLinkovi));
+
+    
+    this.submit(); 
+  });
 }
