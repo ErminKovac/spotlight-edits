@@ -267,15 +267,33 @@ if (navToggle && navLinks) {
   });
 }
 
-// Booking form: show success message.
-// Netlify intercepts the POST on the live site — this just gives instant
-// visual feedback and works fine locally too (form still submits to Netlify).
+
 const bookingForm = document.getElementById('bookingForm');
 const formSuccess = document.getElementById('formSuccess');
+
 if (bookingForm) {
-  bookingForm.addEventListener('submit', (e) => {
-    // Let Netlify handle the actual submission (no e.preventDefault needed
-    // in production). We just reveal the success note optimistically.
-    formSuccess.classList.add('show');
+  bookingForm.addEventListener('submit', function (e) {
+    e.preventDefault(); // Ovo sprječava osvježavanje stranice i 404 grešku!
+
+    const formData = new FormData(bookingForm);
+
+    // Šaljemo podatke Netlify-u u pozadini
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+    .then(() => {
+      // Kada se uspješno pošalje, resetuj formu i prikaži zelenu poruku
+      bookingForm.reset();
+      if (formSuccess) {
+        formSuccess.classList.add('show'); 
+      }
+    })
+    .catch((error) => {
+      console.error('Greška pri slanju:', error);
+      alert('Došlo je do greške. Pokušajte ponovo.');
+    });
   });
+}
 }
