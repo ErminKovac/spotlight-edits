@@ -345,7 +345,15 @@ section { padding: 6.5rem 1.5rem; position: relative; }
   border-color: rgba(242,183,5,0.4);
   box-shadow: 0 16px 40px rgba(0,0,0,0.4);
 }
-.reel-frame { position: relative; aspect-ratio: 5/3; }
+.reel-frame {
+  position: relative; 
+  aspect-ratio: 16 / 9;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: 100%;
+}
 .reel-svg { width: 100%; height: 100%; }
 .reel-play {
   position: absolute;
