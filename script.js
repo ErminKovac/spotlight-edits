@@ -297,7 +297,7 @@ if (bookingForm) {
   });
 }
 
-
+// Funkcija za automatsko selektovanje paketa u formi
 function odaberiPaket(imePaketa) {
     const paketSelect = document.getElementById('package');
     if (paketSelect) {
@@ -305,35 +305,34 @@ function odaberiPaket(imePaketa) {
     }
 }
 
-const bookingForm = document.getElementById('bookingForm');
+(function() {
+    const forma = document.getElementById('bookingForm');
+    if (!forma) return;
 
-if (bookingForm) {
-  bookingForm.addEventListener('submit', function(event) {
-    
-    event.preventDefault(); 
+    forma.addEventListener('submit', function(event) {
+        const linkPolje = document.getElementById('link');
+        if (!linkPolje) return;
 
-    const linkInput = document.getElementById('link');
-    const uneseniLink = linkInput.value.trim().toLowerCase();
+        const uneseniLink = linkPolje.value.trim().toLowerCase();
 
-  
-    if (!uneseniLink.includes('wetransfer.com') && !uneseniLink.includes('we.tl')) {
-      alert('Molimo vas da unesete validan WeTransfer link.');
-      return; // Prekida dalje izvršavanje
-    }
+       
+        if (!uneseniLink.includes('wetransfer.com') && !uneseniLink.includes('we.tl')) {
+            event.preventDefault(); // Zaustavlja slanje samo ako je greška
+            alert('Molimo vas da unesete validan WeTransfer link.');
+            return;
+        }
 
-    
-    let poslaniLinkovi = JSON.parse(localStorage.getItem('iskoristeniLinkovi')) || [];
+       
+        let poslaniLinkovi = JSON.parse(localStorage.getItem('iskoristeniLinkovi')) || [];
+        
+        if (poslaniLinkovi.includes(uneseniLink)) {
+            event.preventDefault(); // Zaustavlja slanje
+            alert('Ovaj WeTransfer link je već poslan! Ako prijavljujete novu utakmicu, molimo zalijepite novi link.');
+            return;
+        }
 
-    if (poslaniLinkovi.includes(uneseniLink)) {
-      alert('Ovaj WeTransfer link je već poslan! Ako prijavljujete novu utakmicu, molimo zalijepite novi link.');
-      return; // Prekida slanje forme
-    }
-
-    
-    poslaniLinkovi.push(uneseniLink);
-    localStorage.setItem('iskoristeniLinkovi', JSON.stringify(poslaniLinkovi));
-
-    
-    this.submit(); 
-  });
-}
+        
+        poslaniLinkovi.push(uneseniLink);
+        localStorage.setItem('iskoristeniLinkovi', JSON.stringify(poslaniLinkovi));
+    });
+})();
