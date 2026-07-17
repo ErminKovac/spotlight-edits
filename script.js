@@ -296,3 +296,11 @@ if (bookingForm) {
     });
   });
 }
+
+// Funkcija za automatsko selektovanje paketa u formi
+function odaberiPaket(imePaketa) {
+    const paketSelect = document.getElementById('package');
+    if (paketSelect) {
+        paketSelect.value = imePaketa;
+    }
+}

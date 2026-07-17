@@ -179,7 +179,7 @@
         <li data-i18n="p1_f3">Osnovna grafika (ime, pozicija)</li>
         <li data-i18n="p1_f4">Isporuka u 48h</li>
       </ul>
-      <a href="#forma" class="btn btn-outline" data-i18n="btn_odaberi">Odaberi</a>
+      <a href="#forma" class="btn btn-outline" onclick="odaberiPaket('Osnovni')" data-i18n="btn_odaberi">Odaberi</a>
     </article>
 
     <article class="price-card price-card-featured reveal">
@@ -193,7 +193,7 @@
         <li data-i18n="p2_f4">Muzika i tranzicije</li>
         <li data-i18n="p2_f5">Isporuka u 24–48h</li>
       </ul>
-      <a href="#forma" class="btn btn-primary" data-i18n="btn_odaberi">Odaberi</a>
+      <a href="#forma" class="btn btn-outline" onclick="odaberiPaket('Pro')" data-i18n="btn_odaberi">Odaberi</a>
     </article>
 
     <article class="price-card reveal">
@@ -205,7 +205,7 @@
         <li data-i18n="p3_f3">Paket za slanje više klubova</li>
         <li data-i18n="p3_f4">Fiksna cijena po dogovoru</li>
       </ul>
-      <a href="#forma" class="btn btn-outline" data-i18n="btn_kontaktiraj">Kontaktiraj me</a>
+      <a href="#forma" class="btn btn-outline" onclick="odaberiPaket('Klub paket')" data-i18n="btn_odaberi">Odaberi</a>
     </article>
   </div>
   <p class="pricing-note reveal" data-i18n-html="pricing_note">* Cijene su okvirne — uredi ih u <code>index.html</code> prema svojoj ponudi.</p>
@@ -259,9 +259,9 @@
         <div>
           <label for="package" data-i18n="form_package">Paket</label>
           <select id="package" name="package">
-            <option data-i18n="pkg_1">Osnovni</option>
-            <option data-i18n="pkg_2">Pro</option>
-            <option data-i18n="pkg_3">Klub paket</option>
+          <option value="Osnovni" data-i18n="pkg_1">Osnovni</option>
+          <option value="Pro" data-i18n="pkg_2">Pro</option>
+          <option value="Klub paket" data-i18n="pkg_3">Klub paket</option>
           </select>
         </div>
       </div>
