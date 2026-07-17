@@ -24,7 +24,7 @@ const translations = {
     proces4_title: "Isporuka",
     proces4_desc: "Gotov klip u roku od 48h, u formatu spremnom za slanje klubu ili manageru.",
     stil_eyebrow: "Stil montaže",
-    stil_heading: "Kako izgleda gotov klip",
+    stil_heading: "Kako izgleda gotov klip?",
     stil_note: "Demo stilovi ispod pokazuju format i grafiku — pravi klijentski radovi stižu uskoro.",
     reel1_tag: "SPRINT / DRIBLING",
     reel1_title: "Napadač reel",
