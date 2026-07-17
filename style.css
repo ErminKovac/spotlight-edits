@@ -628,13 +628,10 @@ textarea { resize: vertical; }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .form-row-split { grid-template-columns: 1fr; }
 
-  .reel-frame {
+.reel-frame {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; 
-  height: 0;
   overflow: hidden;
-  border-radius: 8px;
 }
 
 .reel-frame iframe {
