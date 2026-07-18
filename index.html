@@ -87,7 +87,8 @@
     <div class="process-step reveal">
       <span class="step-num">01</span>
       <h3 data-i18n="proces1_title">Pošalji snimak</h3>
-      <p data-i18n="proces1_desc">Podijeli link ka snimku utakmice (Drive, WeTransfer ili sličn) putem forme ispod.</p>
+      <p data-i18n="proces1_desc">Putem forme ispod pošalji nam link (WeTransfer)tvojim video materijalom. Možeš nam poslati snimak cijele utakmice kako bismo mi detaljno pregledali meč i pronašli tvoje najbolje momente,
+        ili nam jednostavno proslijedi već isječene klipove svojih akcija koje želiš da profesionalno uobličimo i montiramo.</p>
     </div>
     <div class="process-step reveal">
       <span class="step-num">02</span>
@@ -171,20 +172,21 @@
   <div class="pricing-grid">
     <article class="price-card reveal">
       <p class="price-tag" data-i18n="p1_tag">OSNOVNI</p>
-      <p class="price-amount">20€<span data-i18n="p1_unit">/klip</span></p>
+      <p class="price-amount">50€<span data-i18n="p1_unit">/klip</span></p>
       <ul class="price-features">
         <li data-i18n="p1_f1">Klip do 3 minute</li>
         <li data-i18n="p1_f2">Do 10 izdvojenih akcija</li>
         <li data-i18n="p1_f3">Osnovna grafika (ime, pozicija)</li>
         <li data-i18n="p1_f4">Isporuka u 48h</li>
       </ul>
+      <button type="button" class="price-more" data-modal="modal-p1" data-i18n="btn_saznaj">Saznaj više →</button>
       <a href="#forma" class="btn btn-outline" onclick="odaberiPaket('Osnovni')" data-i18n="btn_odaberi">Odaberi</a>
     </article>
 
     <article class="price-card price-card-featured reveal">
       <p class="price-badge" data-i18n="p2_badge">Najtraženiji</p>
       <p class="price-tag">PRO</p>
-      <p class="price-amount">40€<span data-i18n="p2_unit">/klip</span></p>
+      <p class="price-amount" data-i18n="p3_amount">Po dogovoru</p>
       <ul class="price-features">
         <li data-i18n="p2_f1">Highlight reel do 5 minuta</li>
         <li data-i18n="p2_f2">Neograničen broj akcija</li>
@@ -192,6 +194,7 @@
         <li data-i18n="p2_f4">Muzika i tranzicije</li>
         <li data-i18n="p2_f5">Isporuka u 24–48h</li>
       </ul>
+      <button type="button" class="price-more" data-modal="modal-p2" data-i18n="btn_saznaj">Saznaj više →</button>
       <a href="#forma" class="btn btn-outline" onclick="odaberiPaket('Pro')" data-i18n="btn_odaberi">Odaberi</a>
     </article>
 
@@ -204,10 +207,101 @@
         <li data-i18n="p3_f3">Paket za slanje više klubova</li>
         <li data-i18n="p3_f4">Fiksna cijena po dogovoru</li>
       </ul>
+      <button type="button" class="price-more" data-modal="modal-p3" data-i18n="btn_saznaj">Saznaj više →</button>
       <a href="#forma" class="btn btn-outline" onclick="odaberiPaket('Klub paket')" data-i18n="btn_odaberi">Odaberi</a>
     </article>
   </div>
 </section>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Zatvori" data-i18n-aria="modal_close_aria">✕</button>
+
+    <div class="modal-panel" id="modal-p1">
+      <p class="modal-tag" data-i18n="p1_tag">OSNOVNI</p>
+      <h3 data-i18n="p1_detail_title">Osnovni paket</h3>
+      <p class="modal-sub" data-i18n="p1_detail_sub">Za brzi, jasan uvid u tvoju formu</p>
+      <p class="modal-body" data-i18n="p1_detail_body">Idealno kad ti treba jedan čist, fokusiran klip — recimo poslije jedne dobre utakmice koju želiš odmah proslijediti dalje, bez čekanja.</p>
+      <div class="modal-cols">
+        <div>
+          <p class="modal-heading" data-i18n="detail_for_heading">Idealno za:</p>
+          <ul>
+            <li data-i18n="p1_detail_for1">Slanje jedne istaknute utakmice</li>
+            <li data-i18n="p1_detail_for2">Prvi kontakt sa novim klubom</li>
+            <li data-i18n="p1_detail_for3">Brz, ažuran prikaz forme</li>
+          </ul>
+        </div>
+        <div>
+          <p class="modal-heading" data-i18n="detail_includes_heading">Šta dobijaš:</p>
+            <ul>
+              <li data-i18n="p1_detail_inc1">Grafička ID kartica na početku (ime, godište, pozicija, visina, jača noga, kontakt)</li>
+              <li data-i18n="p1_detail_inc2">Vizuelno označavanje igrača (krug/strelica) prije svakog poteza</li>
+              <li data-i18n="p1_detail_inc3">Kratki teaser (1 min) za Instagram/TikTok</li>
+              <li data-i18n="p1_detail_inc4">Full CV (3–5 min) za YouTube i agente</li>
+              <li data-i18n="p1_detail_inc5">Čist zvuk i prilagođena pozadinska muzika</li>
+            </ul>
+        </div>
+      </div>
+      <a href="#forma" class="btn btn-primary modal-cta" onclick="odaberiPaket('Osnovni')" data-i18n="btn_odaberi">Odaberi</a>
+    </div>
+
+    <div class="modal-panel" id="modal-p2">
+      <p class="modal-tag">PRO</p>
+      <h3 data-i18n="p2_detail_title">Pro paket</h3>
+      <p class="modal-sub" data-i18n="p2_detail_sub">Kompletan highlight reel sa profesionalnim detaljima</p>
+      <p class="modal-body" data-i18n="p2_detail_body">Najbolji izbor ako želiš da ostaviš snažan i cjelovit utisak — sa statistikom, muzikom i grafikom koja izgleda profesionalno, ne amaterski.</p>
+      <div class="modal-cols">
+        <div>
+          <p class="modal-heading" data-i18n="detail_for_heading">Idealno za:</p>
+          <ul>
+            <li data-i18n="p2_detail_for1">Slanje više klubova odjednom</li>
+            <li data-i18n="p2_detail_for2">Sezonski pregled najboljih trenutaka</li>
+            <li data-i18n="p2_detail_for3">Kad želiš da se izdvojiš od drugih igrača</li>
+          </ul>
+        </div>
+        <div>
+          <p class="modal-heading" data-i18n="detail_includes_heading">Šta dobijaš:</p>
+            <ul>
+              <li data-i18n="p2_detail_inc1">Pregled 5–10 tvojih cijelih utakmica</li>
+              <li data-i18n="p2_detail_inc2">Top potezi izvučeni i složeni po kategorijama (pasovi, duel, golovi/asistencije)</li>
+              <li data-i18n="p2_detail_inc3">Premium "Telestration" praćenje kretanja (TV stil analiza)</li>
+              <li data-i18n="p2_detail_inc4">Kompletan CV video (4–7 min) spreman za slanje</li>
+              <li data-i18n="p2_detail_inc5">Kategorije prilagođene tvojoj poziciji (npr. vezni: kreativni pasovi, defanzivni duel)</li>
+            </ul>
+        </div>
+      </div>
+      <a href="#forma" class="btn btn-primary modal-cta" onclick="odaberiPaket('Pro')" data-i18n="btn_odaberi">Odaberi</a>
+    </div>
+
+    <div class="modal-panel" id="modal-p3">
+      <p class="modal-tag" data-i18n="p3_tag">KLUB PAKET</p>
+      <h3 data-i18n="p3_detail_title">Klub paket</h3>
+      <p class="modal-sub" data-i18n="p3_detail_sub">Prilagođeno rješenje za timove i agencije</p>
+      <p class="modal-body" data-i18n="p3_detail_body">Kad ti treba montaža za više igrača, cijelu utakmicu ili sezonski pregled za klupsku arhivu — dogovaramo obim i cijenu prema tvojim potrebama.</p>
+      <div class="modal-cols">
+        <div>
+          <p class="modal-heading" data-i18n="detail_for_heading">Idealno za:</p>
+          <ul>
+            <li data-i18n="p3_detail_for1">Klubove i akademije</li>
+            <li data-i18n="p3_detail_for2">Agente sa više igrača</li>
+            <li data-i18n="p3_detail_for3">Sezonske sažetke i arhive</li>
+          </ul>
+        </div>
+        <div>
+          <p class="modal-heading" data-i18n="detail_includes_heading">Šta dobijaš:</p>
+            <ul>
+              <li data-i18n="p3_detail_inc1">Video analiza "dobre i loše strane" (odlične odluke + greške u postavci/taktici)</li>
+              <li data-i18n="p3_detail_inc2">Crtanje po ekranu (strelice kretanja, linije tima, prostor)</li>
+              <li data-i18n="p3_detail_inc3">Statistički karton (PDF): % tačnih pasova, dobijeni dueli, oduzete lopte</li>
+              <li data-i18n="p3_detail_inc4">Stručni rezime sa jasnim smjernicama za napredak</li>
+              <li data-i18n="p3_detail_inc5">Video sa naracijom koja objašnjava taktičke detalje</li>
+            </ul>
+        </div>
+      </div>
+      <a href="#forma" class="btn btn-primary modal-cta" onclick="odaberiPaket('Klub paket')" data-i18n="btn_odaberi">Odaberi</a>
+    </div>
+  </div>
+</div>
 
 <!-- FORMA -->
 <section class="contact" id="forma">
@@ -218,7 +312,7 @@
       <p data-i18n="kontakt_desc">Popuni formu i javljamo se u roku od 24h da dogovorimo detalje.</p>
       <div class="contact-alt">
         <p data-i18n="kontakt_ili">Ili direktno:</p>
-        <a href="mailto:info@spotlightedits.example">info@spotlightedits.example</a>
+        <a href="mailto:info.spotlightedits@gmail.com">info.spotlightedits@gmail.com</a>
       </div>
     </div>
 
@@ -292,8 +386,8 @@
       <a href="#forma" data-i18n="footer_kontakt">Kontakt</a>
     </div>
     <div class="footer-social">
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="TikTok">TikTok</a>
+        <a href="https://www.instagram.com/spotlightedits3" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@spotlightedits3?_r=1" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
     </div>
   </div>
   <p class="footer-copy">© <span id="year"></span> Spotlight Edits. <span data-i18n="footer_rights">Sva prava zadržana.</span></p>
