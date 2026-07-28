@@ -1,8 +1,9 @@
 // ============ LANGUAGE (BS / EN) ============
 const translations = {
   bs: {
-    page_title: "Spotlight Edits — Montaža fudbalskih highlight klipova",
-    page_description: "Profesionalna montaža fudbalskih video klipova za slanje klubovima, manadžerima i skautima.",
+    page_title: "Spotlight Edits — Montaža fudbalskih highlight klipova i video CV",
+    page_description: "Profesionalna montaža fudbalskih highlight klipova i video CV-a za igrače. Brza isporuka — spremno za slanje klubovima, skautima i menadžerima. Smart Cut, Pro Scout i Elite Analytics.",
+    og_locale: "bs_BA",
     nav_kako: "Kako radi",
     nav_stil: "Stil montaže",
     nav_paketi: "Paketi",
@@ -104,8 +105,9 @@ const translations = {
     footer_rights: "Sva prava zadržana.",
   },
   en: {
-    page_title: "Spotlight Edits — Football Highlight Video Editing",
-    page_description: "Professional editing of football video clips to send to clubs, managers, and scouts.",
+    page_title: "Spotlight Edits — Football Highlight Video Editing & Player Video CV",
+    page_description: "Professional football highlight video editing and player video CVs. Fast delivery — ready to send to clubs, scouts, and managers. Smart Cut, Pro Scout, and Elite Analytics.",
+    og_locale: "en_US",
     nav_kako: "How it works",
     nav_stil: "Editing style",
     nav_paketi: "Packages",
@@ -216,6 +218,17 @@ function applyLanguage(lang) {
   document.title = dict.page_title;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute('content', dict.page_description);
+
+  const ogTitle = document.getElementById('ogTitle');
+  const ogDescription = document.getElementById('ogDescription');
+  const ogLocale = document.getElementById('ogLocale');
+  const twitterTitle = document.getElementById('twitterTitle');
+  const twitterDescription = document.getElementById('twitterDescription');
+  if (ogTitle) ogTitle.setAttribute('content', dict.page_title);
+  if (ogDescription) ogDescription.setAttribute('content', dict.page_description);
+  if (ogLocale) ogLocale.setAttribute('content', dict.og_locale || (lang === 'en' ? 'en_US' : 'bs_BA'));
+  if (twitterTitle) twitterTitle.setAttribute('content', dict.page_title);
+  if (twitterDescription) twitterDescription.setAttribute('content', dict.page_description);
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
